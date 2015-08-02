@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  padding: 0.2em;
+  border: 0.2em solid #2c3e50;
+  border-radius: 0.2em;
+  transition: all 0.4s ease-out;
+}
+
+input:active, input:focus {
+  border: 0.2em solid #bdc3c7;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+button {
+  padding: 0.2em;
+  cursor: pointer;
+  border: 0.2em solid #2c3e50;
+  border-radius: 0.2em;
+  background: #2c3e50;
+  color: #ecf0f1;
+  transition: all 0.4s ease-out;
+}
+
+button:hover {
+  border: 0.2em solid #7f8c8d;
+  background: #7f8c8d;
+}
+
+.box-chat {
+  position: relative;
+  min-width: 50%;
+}
+
+.same-line {
+  white-space: nowrap;
+}
+
+.chat-messages {
+  display: inline-block;
+  width: 80%;
+  min-height: 200px;
+  border: 2px solid #2c3e50;
+  border-radius: 0.2em;
+}
+
+.chat-users {
+  display: inline-block;
+  width: 20%;
+  min-height: 200px;
+  border: 2px solid #2c3e50;
+  border-radius: 0.2em;
+}
+
+.input-send {
+  width: 80%;
+}
+
+.btn-send {
+  width: 20%;
+}

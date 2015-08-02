@@ -24,10 +24,12 @@
     "file-loader": "^0.8.4",
     "html-minifier": "^0.7.2",
     "img-loader": "^1.1.0",
+    "jquery": "^2.1.4",
     "json-loader": "^0.5.2",
     "less": "^2.5.1",
     "less-loader": "^2.2.0",
     "node-libs-browser": "^0.5.2",
+    "simple-multi-peer": "0.0.1",
     "style-loader": "^0.12.3",
     "webpack": "^1.10.1"
   }
