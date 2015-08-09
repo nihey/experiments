@@ -143,7 +143,7 @@ window.sora.columnFrequency = 1;
 --
 
 /*
- * Just a secret: if you watch this code close enough, you'll see it is just an ilusion
+ * Fun Fact: if you watch this code close enough, you'll see it is just an ilusion
  *  - but it fools our eyes pretty well.
  */
 ++
@@ -152,7 +152,7 @@ window.sora.columnFrequency = 1;
 **
 
 //
-// As a final thing to do, we should fill all this emptiness with something...
+// We should fill all this emptiness with something...
 //
 ++
 ++
@@ -169,6 +169,7 @@ for (var i = 0; i < 5; i++) {
 /*
  * This is a nice oportunity to do some parallax...
  */
+++
 
 .background-container > img {
   animation: slide 120s linear infinite;
@@ -177,6 +178,33 @@ for (var i = 0; i < 5; i++) {
   -moz-animation: slide 120s linear infinite;
   -webkit-animation: slide 120s linear infinite;
 }
+--
+
+++
+/*
+ * And finally, I should invite you to take a look into this page's source code
+ */
+++
+
+.github {
+  position: absolute;
+  bottom: 64px;
+  left: 50%;
+  color: #1E824C;
+  font-size: 32px;
+  text-decoration: none;
+  outline: 0;
+  transition: color 0.3s;
+}
+
+.github, .github * {
+  opacity: 1;
+}
+
+.github:hover {
+  color: #A2DED0;
+}
+
 --
 
 ++
