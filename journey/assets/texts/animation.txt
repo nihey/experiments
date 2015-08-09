@@ -1,0 +1,5 @@
+// Hello, my name is Nihey.
+//
+// I'm a computer scientist and web developer, and this is my Javascript demo!
+**
+/* And this is my CSS demo! */

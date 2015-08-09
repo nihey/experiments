@@ -1,0 +1,39 @@
+* {
+  opacity: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.visible, .texts, html, body, #css-text, #javascript-text {
+  opacity: 100;
+}
+
+.container {
+  padding-right: 45px;
+  padding-left: 45px;
+}
+
+.texts {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.texts > * {
+  opacity: 100;
+  float: left;
+  width: 50%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+#css-text, #javascript-text {
+  padding: 1em;
+  border: 0.3em solid #464646;
+  max-height: 400px;
+  overflow: auto;
+}

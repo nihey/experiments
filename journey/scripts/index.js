@@ -1,10 +1,8 @@
 var $ = require('jquery'),
-    Sprite = require('exports?window.Sprite!sprite-js/dist/sprite.min');
+    Sprite = require('exports?window.Sprite!sprite-js/dist/sprite.min'),
+    animation = require('./animation');
 
 $(document).ready(function() {
-//  $('#style-text').on('keyup', function() {
-//    $('#style').html($(this).text());
-//  });
   var sora = new Sprite({
     canvas: document.getElementById('canvas'),
     image: document.getElementById('sora'),
@@ -18,4 +16,6 @@ $(document).ready(function() {
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
     sora.draw(0, 0);
   }, 200);
+  // Runs the animation
+  animation();
 });
