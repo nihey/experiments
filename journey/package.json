@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "main": "scripts/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "production-build": "./node_modules/.bin/webpack -p; rm dist/*.map dist/style.js"
   },
   "author": "Nihey Takizawa <nihey.takizawa@gmail.com>",
   "license": "MIT",
