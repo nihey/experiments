@@ -2,4 +2,64 @@
 //
 // I'm a computer scientist and web developer, and this is my Javascript demo!
 **
-/* And this is my CSS demo! */
+/*
+ * And this is my CSS demo!
+ *
+ * Well, I guess the first step would be to animate everything...
+ *
+ */
+
+* {
+  transition: all 1.3s;
+}
+--
+
+/*
+ * Now let's show something interesting, and put it to the center of things...
+ */
+
+canvas {
+  opacity: 100;
+}
+--
+
+.canvas-container {
+  text-align: center;
+}
+--
+
+/*
+ * Oops, sorry, I don't think most people like these hard transitions...
+ * Lets reset it and do it again:
+ */
+
+.canvas-container {
+  text-align: left;
+}
+--
+
+canvas {
+  opacity: 0;
+}
+--
+
+/*
+ * Now lets try to achieve the desired behavior
+ */
+
+canvas {
+  display: inline-block;
+  opacity: 100;
+}
+--
+
+/* Now we got our character on the left */
+
+.canvas-container {
+  transition: padding 5s linear;
+  padding-left: 50%;
+}
+--
+
+/* And she's walking... */
+

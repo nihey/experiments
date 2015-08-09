@@ -7,21 +7,24 @@ var OPOSITE = {javascript:'css', css: 'javascript'};
 var animateLine = function(line, box, callback) {
   var index = 0;
   var showLetter = function() {
+    var element = $('#' + box + '-text');
+    element.animate({
+      scrollTop: element.prop('scrollHeight'),
+    }, Environment.SCROLL_INTERVAL || 0);
+
     // The line is over
     if (index === line.length) {
       callback();
       return;
     }
 
-    $('#' + box + '-text').append(line[index++]);
+    element.append(line[index++]);
     setTimeout(showLetter, Environment.LETTER_INTERVAL || 0);
   };
   showLetter();
 }
 
 var animation = function() {
-  var interval = Environment.LINE_INTERVAL || 0;
-
   var currentBox = 'javascript';
   var currentIndex = 0;
   text = text.split('\n');
@@ -31,20 +34,40 @@ var animation = function() {
   };
 
   var showLine = function() {
+    // Consume current cached code
+    var consume = function() {
+      if (currentBox === 'javascript') {
+        eval(cache.javascript);
+        cache.javascript = '';
+        return;
+      }
+      $('#style').append(cache.css);
+      cache.css = '';
+    };
+
     // Just a helper function to increment the state
     var increment = function() {
       currentIndex++;
-      setTimeout(showLine, interval);
+      setTimeout(showLine, Environment.LINE_INTERVAL || 0);
     };
 
     // When there's no more text to display, the show is over
     if (currentIndex === text.length) {
+      consume();
       return;
     }
 
     // Two asterisks mark the change to the other box
     if (text[currentIndex] === '**') {
       currentBox = OPOSITE[currentBox];
+      consume();
+      increment();
+      return;
+    }
+
+    // Indicator to consume code
+    if (text[currentIndex] === '--') {
+      consume();
       increment();
       return;
     }
