@@ -36,6 +36,7 @@ var animation = function() {
   var showLine = function() {
     // Consume current cached code
     var consume = function() {
+      window.highlight && window.highlight();
       if (currentBox === 'javascript') {
         eval(cache.javascript);
         cache.javascript = '';
@@ -47,8 +48,10 @@ var animation = function() {
 
     // Just a helper function to increment the state
     var increment = function() {
+      var shortLine = text[currentIndex].length < 50;
       currentIndex++;
-      setTimeout(showLine, Environment.LINE_INTERVAL || 0);
+      shortLine || setTimeout(showLine, Environment.LINE_INTERVAL || 0);
+      shortLine && showLine();
     };
 
     // When there's no more text to display, the show is over
@@ -59,8 +62,8 @@ var animation = function() {
 
     // Two asterisks mark the change to the other box
     if (text[currentIndex] === '**') {
-      currentBox = OPOSITE[currentBox];
       consume();
+      currentBox = OPOSITE[currentBox];
       increment();
       return;
     }

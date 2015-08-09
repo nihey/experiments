@@ -1,6 +1,10 @@
+@import "../node_modules/highlight.js/styles/zenburn.css";
+
 * {
   opacity: 0;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 html, body {
@@ -9,8 +13,8 @@ html, body {
   height: 100%;
 }
 
-.visible, .texts, html, body, #css-text, #javascript-text {
-  opacity: 100;
+.visible, .texts, html, body {
+  opacity: 1;
 }
 
 .container {
@@ -24,7 +28,7 @@ html, body {
 }
 
 .texts > * {
-  opacity: 100;
+  opacity: 1;
   float: left;
   width: 50%;
   padding-right: 15px;
@@ -32,12 +36,123 @@ html, body {
 }
 
 #css-text, #javascript-text {
+  opacity: 0.90;
   padding: 1em;
   border: 0.3em solid #464646;
   max-height: 400px;
   overflow: auto;
 }
 
+.character-container {
+  height: 100%;
+}
+
+.canvas-container {
+  position: fixed;
+  bottom: 124px;
+  z-index: 1000;
+}
+
+.background-container {
+  position: fixed;
+  bottom: 0;
+  z-index: -10;
+}
+
+.platform-container {
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+}
+
 .clearfix {
   clear: both;
+}
+
+/* FIXES for vendor prefixes on animation */
+
+@-moz-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide {
+  from {
+    -webkit-transform: translateX(0%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@-moz-keyframes slide {
+  from {
+    -moz-transform: translateX(0%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+  }
+}
+
+@-o-keyframes slide {
+  from {
+    -o-transform: translateX(0%);
+  }
+  to {
+    -o-transform: translateX(-100%);
+  }
+}
+
+@-ms-keyframes slide {
+  from {
+    -ms-transform: translateX(0%);
+  }
+  to {
+    -ms-transform: translateX(-100%);
+  }
+}
+
+* {
+  -o-transition: all 1.3s;
+  -ms-transition: all 1.3s;
+  -moz-transition: all 1.3s;
+  -webkit-transition: all 1.3s;
+}
+
+img {
+  -o-animation: fade-in 2s;
+  -ms-animation: fade-in 2s;
+  -moz-animation: fade-in 2s;
+  -webkit-animation: fade-in 2s;
 }

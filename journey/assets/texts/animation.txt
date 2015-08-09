@@ -1,9 +1,9 @@
 // Hello, my name is Nihey.
 //
-// I'm a computer scientist and web developer, and this is my Javascript demo!
+// I'm a computer scientist and web developer, and this is my Javascript...
 **
 /*
- * And this is my CSS demo!
+ * ... and CSS demo!
  *
  * Well, I guess the first step would be to animate everything...
  *
@@ -19,41 +19,9 @@
  */
 
 canvas {
-  opacity: 100;
+  opacity: 1;
 }
 --
-
-.canvas-container {
-  text-align: center;
-}
---
-
-/*
- * Oops, sorry, I don't think most people like these hard transitions...
- * Lets reset it and do it again:
- */
-
-.canvas-container {
-  text-align: left;
-}
---
-
-canvas {
-  opacity: 0;
-}
---
-
-/*
- * Now lets try to achieve the desired behavior
- */
-
-canvas {
-  display: inline-block;
-  opacity: 100;
-}
---
-
-/* Now we got our character on the left */
 
 .canvas-container {
   transition: padding 5s linear;
@@ -61,5 +29,125 @@ canvas {
 }
 --
 
-/* And she's walking... */
+/*
+ * We should also prepare ourselves for the things to come
+ */
 
+pre * {
+  opacity: 1;
+}
+
+.platform-container, .background-container {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+img {
+  opacity: 1;
+  vertical-align: bottom;
+  animation: fade-in 2s;
+}
+**
+//
+// Now we should give our character something more concrete, or solid.
+//
+
+var createPlatform = function() {
+  $('#platforms').append($(platform).clone());
+};
+
+for (var i = 0; i < 40; i++) {
+  setTimeout(createPlatform, (Environment.PLATFORM_INTERVAL || 100) * i);
+}
+**
+
+/*
+ * Now that we created the woman and the land, we should create the sky...
+ */
+
+body {
+  background: #59ABE3;
+}
+**
+//
+// And make this text a more readable
+//
+
+window.highlight = function() {
+  $('pre').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+};
+--
+--
+
+//
+// So much better now!
+// We should put some motion into this:
+//
+
+window.sora.columnFrequency = 1;
+**
+
+/*
+ * And this
+ */
+
+@keyframes slide {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.platform-container > img {
+  animation: slide 3s linear infinite;
+  -o-animation: slide 3s linear infinite;
+  -ms-animation: slide 3s linear infinite;
+  -moz-animation: slide 3s linear infinite;
+  -webkit-animation: slide 3s linear infinite;
+}
+--
+
+/*
+ * Just a secret: if you watch this code close enough, you'll see it is just an ilusion
+ *  - but it fools our eyes pretty well.
+ */
+**
+
+//
+// As a final thing to do, we should fill all this emptiness with something...
+//
+
+var createBackground = function() {
+  $('#background').append($(background).clone());
+};
+
+for (var i = 0; i < 5; i++) {
+  setTimeout(createBackground, (Environment.BACKGROUND_INTERVAL || 100) * i);
+}
+**
+
+/*
+ * This is a nice oportunity to do some parallax...
+ */
+
+.background-container > img {
+  animation: slide 120s linear infinite;
+  -o-animation: slide 120s linear infinite;
+  -ms-animation: slide 120s linear infinite;
+  -moz-animation: slide 120s linear infinite;
+  -webkit-animation: slide 120s linear infinite;
+}
