@@ -27,20 +27,56 @@ html, body {
   margin-left: -15px;
 }
 
-.texts > * {
-  opacity: 1;
-  float: left;
-  width: 50%;
-  padding-right: 15px;
-  padding-left: 15px;
+@media (max-width: 599px) {
+  .texts > * {
+    opacity: 1;
+    float: left;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 }
 
-#css-text, #javascript-text {
-  opacity: 0.90;
-  padding: 1em;
-  border: 0.3em solid #464646;
-  max-height: 400px;
-  overflow: auto;
+@media (min-width: 600px) {
+  .texts > * {
+    opacity: 1;
+    float: left;
+    width: 50%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (max-height: 599px) {
+  #css-text, #javascript-text {
+    opacity: 0.90;
+    padding: 1em;
+    border: 0.3em solid #464646;
+    max-height: 200px;
+    font-size: 0.5em;
+    overflow: auto;
+  }
+}
+
+@media (max-height: 299px) {
+  #css-text, #javascript-text {
+    opacity: 0.90;
+    padding: 1em;
+    border: 0.3em solid #464646;
+    max-height: 100px;
+    font-size: 0.5em;
+    overflow: auto;
+  }
+}
+
+@media (min-height: 600px) {
+  #css-text, #javascript-text {
+    opacity: 0.90;
+    padding: 1em;
+    border: 0.3em solid #464646;
+    max-height: 400px;
+    overflow: auto;
+  }
 }
 
 .character-container {
