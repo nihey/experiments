@@ -4,19 +4,23 @@
 **
 /*
  * ... and CSS demo!
+++
  *
  * Well, I guess the first step would be to animate everything...
  *
  */
+++
 
 * {
   transition: all 1.3s;
 }
 --
 
+++
 /*
  * Now let's show something interesting, and put it to the center of things...
  */
+++
 
 canvas {
   opacity: 1;
@@ -28,10 +32,13 @@ canvas {
   padding-left: 50%;
 }
 --
+++
+++
 
 /*
  * We should also prepare ourselves for the things to come
  */
+++
 
 pre * {
   opacity: 1;
@@ -58,9 +65,13 @@ img {
   animation: fade-in 2s;
 }
 **
+++
+++
 //
 // Now we should give our character something more concrete, or solid.
 //
+++
+++
 
 var createPlatform = function() {
   $('#platforms').append($(platform).clone());
@@ -74,14 +85,19 @@ for (var i = 0; i < 40; i++) {
 /*
  * Now that we created the woman and the land, we should create the sky...
  */
+++
+++
 
 body {
   background: #59ABE3;
 }
 **
+++
 //
-// And make this text a more readable
+// And make this text more readable
 //
+++
+++
 
 window.highlight = function() {
   $('pre').each(function(i, block) {
@@ -91,10 +107,14 @@ window.highlight = function() {
 --
 --
 
+++
+++
 //
 // So much better now!
+++
 // We should put some motion into this:
 //
+++
 
 window.sora.columnFrequency = 1;
 **
@@ -102,6 +122,7 @@ window.sora.columnFrequency = 1;
 /*
  * And this
  */
+++
 
 @keyframes slide {
   from {
@@ -125,11 +146,16 @@ window.sora.columnFrequency = 1;
  * Just a secret: if you watch this code close enough, you'll see it is just an ilusion
  *  - but it fools our eyes pretty well.
  */
+++
+++
+++
 **
 
 //
 // As a final thing to do, we should fill all this emptiness with something...
 //
+++
+++
 
 var createBackground = function() {
   $('#background').append($(background).clone());
@@ -151,3 +177,65 @@ for (var i = 0; i < 5; i++) {
   -moz-animation: slide 120s linear infinite;
   -webkit-animation: slide 120s linear infinite;
 }
+--
+
+++
+/*
+ * Well this was fun, but it's over now...
+ * Let's go back there ( <- )so I can give some acknowledgements to some people
+ *
+ */
+++
+++
+**
+//
+// I thank Samuel Reed and Jake Albaugh for doing this kind of animation before me.
+//
+// You can find more about their work at http://strml.net and http://codepen.io/jakealbaugh/
+//
+// -----------------------
+++
+++
+//
+// I would also like to thank Rachel Nabors, Famitsu and Open Game Art for
+// providing me the art needed to build this - creating such graphics is
+// certainly not by best.
+//
+// These are my references:
+//
+// Rachel Nabors: https://gist.github.com/rachelnabors/4056836
+// Famitsu: http://www.famitsu.com/freegame/tool/chibi/index2.html
+// Open Game Art: http://opp.opengameart.org/index.php/Jungle_tiles
+//
+// You'll find more about them in the respective links:
+//
+// Rachel Nabors: http://rachelnabors.com/
+// Famitsu: http://www.famitsu.com/
+// Open Game Art: http://opp.opengameart.org/index.php/Main_Page
+//
+// -----------------------
+++
+++
+//
+// The girl you see walking in the fields was modeled after Sora Gamer.
+// Find out more about her at https://www.youtube.com/user/SoraGamer
+//
+// -----------------------
+++
+++
+//
+// As for me, I'm a web developer based on São Carlos - Brazil.
+//
+// Currently working for Async Open Source, but an eventual freelance
+// developer - depending on my availability.
+//
+// You can contact me via nihey.takizawa@gmail.com - it's always good to see
+// good people around, even if it's just to say hi.
+++
+++
+//
+//
+//
+// Now it's really over, thanks for staying this long.
+//
+// Bye!!!

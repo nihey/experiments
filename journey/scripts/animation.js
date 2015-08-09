@@ -9,7 +9,7 @@ var animateLine = function(line, box, callback) {
   var showLetter = function() {
     var element = $('#' + box + '-text');
     element.animate({
-      scrollTop: element.prop('scrollHeight'),
+      scrollTop: element.prop('scrollHeight') + 100,
     }, Environment.SCROLL_INTERVAL || 0);
 
     // The line is over
@@ -48,10 +48,8 @@ var animation = function() {
 
     // Just a helper function to increment the state
     var increment = function() {
-      var shortLine = text[currentIndex].length < 50;
       currentIndex++;
-      shortLine || setTimeout(showLine, Environment.LINE_INTERVAL || 0);
-      shortLine && showLine();
+      showLine();
     };
 
     // When there's no more text to display, the show is over
@@ -65,6 +63,12 @@ var animation = function() {
       consume();
       currentBox = OPOSITE[currentBox];
       increment();
+      return;
+    }
+
+    // Indicator to wait before continuing
+    if (text[currentIndex] === '++') {
+      setTimeout(increment, Environment.WAIT_INTERVAL || 0);
       return;
     }
 
